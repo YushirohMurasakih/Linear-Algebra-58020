@@ -1,0 +1,159 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled2.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNerZDukEj7oVSzhQza9bTW",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/YushirohMurasakih/Linear-Algebra-58020/blob/main/Applications%20of%20Linear%20Systems\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "SK0GP3isgLz7"
+      },
+      "source": [
+        "##Systems of Linear Equation can be solved with arrays and NumPy\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g1_mAf65XtDT",
+        "outputId": "724a2175-f532-461b-a060-af2daf82e9c4"
+      },
+      "source": [
+        "import numpy as np\n",
+        "from scipy.linalg import solve\n",
+        "\n",
+        "A = np.array([[4,5],[3,-2]])\n",
+        "print(A)\n",
+        "B = np.array([[7],[11]])\n",
+        "print(B)\n",
+        "\n",
+        "X=np.linalg.inv(A).dot(B)\n",
+        "print(X)"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 4  5]\n",
+            " [ 3 -2]]\n",
+            "[[ 7]\n",
+            " [11]]\n",
+            "[[ 3.]\n",
+            " [-1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eG8gZVdqgQEQ",
+        "outputId": "cca6d5ac-54fa-49f2-c052-609ae6bbb23b"
+      },
+      "source": [
+        "inv_A = np.linalg.inv(A)\n",
+        "print(inv_A)\n",
+        "\n",
+        "X = np.dot(inv_A,B)\n",
+        "print(X)"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0.08695652  0.2173913 ]\n",
+            " [ 0.13043478 -0.17391304]]\n",
+            "[[ 3.]\n",
+            " [-1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "W0BFk7BAgbwA",
+        "outputId": "9d7f8288-4997-4ec9-b040-ddb6a79adcca"
+      },
+      "source": [
+        "X =np.linalg.solve(A,B)\n",
+        "print(X)"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 3.]\n",
+            " [-1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9wF281bhgdP9",
+        "outputId": "2eeebeee-1101-435e-8c39-1d9182d80a0c"
+      },
+      "source": [
+        "from scipy.linalg import solve\n",
+        "X = solve(A,B)\n",
+        "print(X)"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 3.]\n",
+            " [-1.]]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
